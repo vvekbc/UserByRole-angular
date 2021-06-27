@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-spacing: 0 2em;
+}
+.roles-table{
+    border-spacing: 0px;
+    height: 100%;
+    margin-bottom: 0px;
+    thead {
+    th{
+        border-bottom: 0px;
+        color: #989898;
+        font-size: 14px;
+        position: sticky;
+        top: 0;
+        z-index: 4;
+        background: #ffffff;
+    }
+    tr{
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+        height: 50px;
+    }
+}
+    tbody {
+        tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+            height: 25px;
+        }
+        td{
+        border-top: 0px;
+        border-bottom: 1px solid #989898;
+        height: 50px;
+        }
+    }
+    
+}
