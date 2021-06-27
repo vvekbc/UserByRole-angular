@@ -46,19 +46,13 @@ export class AppComponent {
 
   getAllRoles() {
     this.dashboardService.getAllRoles({}).subscribe((response: any) => {
-      console.log("response", response)
       if (response.status == 'success') {
-        this.availableRoles = response.rolesList;//[ ...this.availableRoles, ...response.rolesList ]
-        // Array.prototype.push.apply(this.availableRoles,response.rolesList); 
-
-        // this.availableRoles.push(0,{_id:"","created_at":"","name":"All"})
-        console.log("this.availableRoles", this.availableRoles)
+        this.availableRoles = response.rolesList;
       }
     })
   }
   getAllUsers() {
     this.dashboardService.getAllUsers({}).subscribe((response: any) => {
-      console.log("response", response)
       if (response.status == 'success') {
         this.usersList = response.usersList
       }
@@ -72,16 +66,13 @@ export class AppComponent {
       "maxRows": this.maxRows
     }
     this.dashboardService.getUsersByRole(params).subscribe((response: any) => {
-      console.log("response", response)
       if (response.status == 'success') {
         this.usersList = response.usersList
         this.totalRecords=response.totalRecords
       }
     });
   }
-  onRoleSelected(value) {
-    console.log("Value", value, this.selectedRoleId);
-   
+  onRoleSelected(value) {   
     this.getUsersByRole();
 
   }
@@ -90,9 +81,7 @@ export class AppComponent {
     this.currentPage = 1;
     this.getUsersByRole();   
   }
-  public getServerData(event?:PageEvent){
-  console.log("event",event)
-  
+  public getServerData(event?:PageEvent){ 
     if(this.maxRows!= event.pageSize){
     this.maxRows=event.pageSize
     this.currentPage=1;
